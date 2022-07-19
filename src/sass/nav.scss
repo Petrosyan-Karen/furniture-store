@@ -1,0 +1,133 @@
+@import "global_styles";
+
+.top_nav{
+   background: $gray;
+   
+   .container{
+      display: flex;
+      min-height: 60px;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+   }
+   .top_nav__block {
+      display: flex;
+      a {
+         display: block;
+         text-decoration: none;
+         margin-right: 15px;
+         svg {
+            width: 45px;
+            height: 45px;
+            fill: $primary;
+            stroke: rgb(244, 255, 251);
+            stroke-width: 1.5px;
+         }
+         &:last-child{
+            margin-right: 0;
+         }
+      }
+       a {
+         font-weight: bold;
+       }
+   }
+}
+
+nav{
+   background: #fff;
+   .container{
+      display: flex;
+      justify-content: space-between;
+      min-height: 80px;
+      align-items: center;
+      position: relative;
+      // .nav_logo{}
+      .nav_menu{
+         .menu_btn{
+            display: none;
+         }
+         ul{
+            display: flex;
+            justify-content: space-between;
+          
+            li{
+               list-style-type: none;
+               a {
+                  display: flex;
+                  height: 80px;
+                  align-items: center;
+                  padding: 8px;
+                  color: $black;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  position: relative;
+                  z-index: 5;
+                  transition: color 0.4s;
+
+                  &::after {
+                     content: "";
+                     position: absolute;
+                     width: 100%;
+                     height: 0%;
+                     top: 0;
+                     left: 0;
+                     color: #fff;
+                     background: $primary;
+                     transition: height 0.4s;
+                     z-index: -1;
+                  }
+
+                  &:hover {
+                    color: #fff;
+                     &::after {
+                       height: 100%;
+                        
+                     }
+                    
+                  }
+               }
+            }
+         }
+         
+         @media screen and (max-width: 768px) {
+           
+            .menu_btn{
+               display: flex;
+            }
+            ul {
+              position: absolute;
+              flex-flow: column;
+              justify-content: flex-start;
+              top: 0px;
+              width: 500px;
+             
+              overflow: hidden;
+              background: $gray;
+              transition: left 0.2s linear;
+              left: -5000px;
+              padding: 0 25px;
+
+              @media screen and (max-width: 580px) {
+                  width: 300px;
+              }
+
+              @media screen and (max-width: 420px) {
+               width: 200px;
+           }
+              li {
+               a {
+                  height: 50px;
+                  padding: 8px 20px;
+                }
+              }
+
+              &.active_nav {
+               height: 100vh;
+               left: 0;
+              }
+            }
+         }
+      }
+   }
+}

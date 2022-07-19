@@ -1,0 +1,41 @@
+//static files
+@import "nav";
+
+// global
+@import "global_styles";
+@import "fonts";
+
+
+
+body {
+   font-family: NSARegular, "Roboto" sans-serif;
+   &::-webkit-scrollbar{
+width: 5px;
+height: 7px;
+overflow: hidden;
+}
+
+&::-webkit-scrollbar-track{
+   background: #ccc;
+}
+&::-webkit-scrollbar-thumb{
+   background: $primary;
+}
+}
+
+
+p{
+   line-height: 22px;
+}
+
+a {
+   color: $link;
+   text-decoration:  none;
+
+   &:hover{
+      text-decoration: underline;
+      color: $primary;
+   }
+}
+
+
