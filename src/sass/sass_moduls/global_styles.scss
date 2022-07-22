@@ -10,6 +10,15 @@ $gray: #d7d7e2;
 $primary: #e3774c;
 $link: #4088fc;
 $black: #1a1a1a;
+$br: 16px;
+
+//media sizes
+$notebook: 1280px;
+$tab: 1024px;
+$bigMobile: 768px;
+$smallMobile: 520px;
+$verySmall: 420px;
+
 
 .container{
    max-width: 1300px;
@@ -50,5 +59,32 @@ $black: #1a1a1a;
       }
       &.open div::after {
          transform: rotate(45deg);
+      }
+    }
+
+    .title{
+      text-align: center;
+      font-size: 45px;
+      margin: 25px 0;
+      color: $black;
+
+@media screen and (max-width: $notebook) {
+        font-size: 40px; 
+      }
+
+@media screen and (max-width: $tab) {
+        font-size: 35px; 
+      }
+
+@media screen and (max-width: $bigMobile) {
+        font-size: 30px; 
+      }
+
+@media screen and (max-width: $smallMobile) {
+        font-size: 25px; 
+      }
+
+@media screen and (max-width: $verySmall) {
+        font-size: 20px; 
       }
     }

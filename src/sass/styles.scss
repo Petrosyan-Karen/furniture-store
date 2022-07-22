@@ -1,14 +1,18 @@
 //static files
-@import "nav";
+@import "./sass_moduls/nav.scss";
+@import "./sass_moduls/header.scss";
+@import "./sass_moduls/main.scss";
 
 // global
-@import "global_styles";
-@import "fonts";
+@import "./sass_moduls/global_styles.scss";
+@import "./sass_moduls/fonts.scss";
 
 
 
 body {
    font-family: NSARegular, "Roboto" sans-serif;
+    overflow-x: hidden;
+
    &::-webkit-scrollbar{
 width: 5px;
 height: 7px;
