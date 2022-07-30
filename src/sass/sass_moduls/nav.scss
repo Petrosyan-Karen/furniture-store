@@ -5,7 +5,7 @@
    
    .container{
       display: flex;
-      min-height: 60px;
+      min-height: 50px;
       align-items: center;
       justify-content: space-between;
       width: 100%;
@@ -17,8 +17,8 @@
          text-decoration: none;
          margin-right: 15px;
          svg {
-            width: 45px;
-            height: 45px;
+            width: 35px;
+            height: 35px;
             fill: $primary;
             stroke: rgb(244, 255, 251);
             stroke-width: 1.5px;
