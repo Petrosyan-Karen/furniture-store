@@ -40,43 +40,68 @@ window.addEventListener("DOMContentLoaded", () => {
     const item = document.querySelectorAll(".item");
     const itemTitle = document.querySelectorAll(".item-footer h3 a");
 
-    item.forEach(item => {
-      item.setAttribute("title",
-      item.children[1]
-      .children[0]
-      .textContent.trim())
+    item.forEach((item) => {
+      item.setAttribute(
+        "title",
+        item.children[1].children[0].textContent.trim()
+      );
     });
 
     itemTitle.forEach((title) => {
-    
       if (title.textContent.length >= 21) {
         title.textContent = title.textContent.slice(0, 21) + "...";
       }
     });
-   
-  
   } catch {}
 
   try {
     var swiper = new Swiper(".swiper-container", {
       slidesPerView: 3,
       spaceBetween: 30,
-        loop: true,
-       
+      loop: true,
+
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
       breakpoints: {
-         768: {
+        768: {
           slidesPerView: 1,
-          spaceBetween: 10
+          spaceBetween: 10,
         },
-         1024: {
+        1024: {
           slidesPerView: 2,
-          spaceBetween: 20
+          spaceBetween: 20,
         },
-      }
+      },
     });
+  } catch {}
+
+  try {
+    const tabBtns = document.querySelectorAll(".tab_header__btn");
+    const tabContents = document.querySelectorAll(".tab_body__content");
+
+    tabBtns[0].classList.add("tab_header__btn-active");
+    tabContents[0].classList.add("tab_body__content-active");
+
+    for (let i = 0; i < tabBtns.length; i++) {
+      tabBtns[i].addEventListener("click", () => {
+        for (let x = 0; x < tabBtns.length; x++) {
+          tabBtns[x].classList.remove("tab_header__btn-active");
+          tabContents[x].classList.remove("tab_body__content-active");
+        }
+        tabBtns[i].classList.add("tab_header__btn-active");
+        tabContents[i].classList.add("tab_body__content-active");
+      });
+    }
+
+    /*    tabBtns.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach((btn) => {
+          btn.classList.remove("tab_header__btn-active");
+        });
+        btn.classList.add("tab_header__btn-active");  
+        });
+    }); */
   } catch {}
 });
